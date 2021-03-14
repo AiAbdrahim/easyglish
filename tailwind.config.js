@@ -19,6 +19,9 @@ module.exports = {
           DEFAULT: colors.red[500],
         },
       },
+      fontFamily: {
+        baloo: ['"Baloo 2"', 'cursive'],
+      },
     },
   },
 

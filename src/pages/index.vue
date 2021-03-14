@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title">EasyGlish</h1>
+      <e-logo class="text-8xl" />
       <div class="links">
         <e-btn class="bg-primary-r text-white ring-primary-r">Primary Red</e-btn>
         <e-btn class="bg-primary-y text-white ring-primary-y">Primary Yellow</e-btn>
@@ -23,13 +23,6 @@ export default {};
   justify-content: center
   align-items: center
   text-align: center
-
-.title
-  display: block
-  font-weight: 300
-  font-size: 100px
-  color: #35495e
-  letter-spacing: 1px
 
 .links
   padding-top: 15px
