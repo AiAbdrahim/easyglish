@@ -1,5 +1,17 @@
 <template>
   <div>
+    <e-navbar fixed>
+      <template #start>
+        <e-logo class="text-3xl" />
+      </template>
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="#">pricing</a>
+      <a href="#">Contact</a>
+      <template #end>
+        <a class="px-3 py-2 text-xs bg-primary-b rounded-md text-white truncate font-semibold">Apply Now</a>
+      </template>
+    </e-navbar>
     <Nuxt />
   </div>
 </template>
@@ -27,13 +39,5 @@ export default {
 
 <style lang="sass">
 html
-  font-family: 'Source Sans Pro', Roboto, Arial, sans-serif
   font-size: 16px
-
-*,
-*::before,
-*::after
-  box-sizing: border-box
-  margin: 0
-  padding: 0
 </style>
