@@ -22,6 +22,14 @@ module.exports = {
       fontFamily: {
         baloo: ['"Baloo 2"', 'cursive'],
       },
+      zIndex: {
+        '-3k': -3000,
+        '-2k': -2000,
+        '-1k': -1000,
+        '1k': 1000,
+        '2k': 2000,
+        '3k': 3000,
+      },
     },
   },
 
