@@ -1,14 +1,17 @@
 <template>
   <div ref="e-navbar" class="e-navbar" :class="{ scrollActive, collapse, collapsed }">
     <div class="e-navbar__start">
-      <slot name="start"></slot>
+      <e-logo class="text-3xl" />
     </div>
     <div class="e-navbar__center">
       <span class="e-navbar--close-btn" @click="collapsed = true">x</span>
-      <slot></slot>
+      <nuxt-link to="/">Home</nuxt-link>
+      <nuxt-link :to="{ name: 'About' }">About</nuxt-link>
+      <nuxt-link :to="{ name: 'Pricing' }">pricing</nuxt-link>
+      <nuxt-link :to="{ name: 'Contact' }">Contact</nuxt-link>
     </div>
     <div class="e-navbar__end">
-      <slot name="end"></slot>
+      <a class="px-3 py-2 text-xs bg-primary-b rounded-md text-white truncate font-semibold">Apply Now</a>
       <span class="e-navbar--open-btn" @click="collapsed = false">O</span>
     </div>
   </div>

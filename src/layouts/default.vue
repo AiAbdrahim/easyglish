@@ -1,17 +1,6 @@
 <template>
   <div>
-    <e-navbar fixed>
-      <template #start>
-        <e-logo class="text-3xl" />
-      </template>
-      <nuxt-link to="/">Home</nuxt-link>
-      <nuxt-link :to="{ name: 'About' }">About</nuxt-link>
-      <nuxt-link :to="{ name: 'Pricing' }">pricing</nuxt-link>
-      <nuxt-link :to="{ name: 'Contact' }">Contact</nuxt-link>
-      <template #end>
-        <a class="px-3 py-2 text-xs bg-primary-b rounded-md text-white truncate font-semibold">Apply Now</a>
-      </template>
-    </e-navbar>
+    <ENavbar fixed />
     <Nuxt />
   </div>
 </template>
