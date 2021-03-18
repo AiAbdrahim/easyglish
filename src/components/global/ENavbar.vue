@@ -3,7 +3,8 @@
     <div class="e-navbar__start">
       <e-logo class="text-3xl" />
     </div>
-    <div class="e-navbar__center">
+    <div class="e-navbar__mobile-overlay" @click="collapsed = true"></div>
+    <div ref="e-navbar__center" class="e-navbar__center">
       <span class="e-navbar--close-btn" @click="collapsed = true">x</span>
       <nuxt-link to="/">Home</nuxt-link>
       <nuxt-link :to="{ name: 'About' }">About</nuxt-link>
@@ -33,6 +34,9 @@ export default {
     (hResize = () => (this.collapse = this.navbarWidth > window.innerWidth))();
     window.addEventListener('scroll', hScroll);
     window.addEventListener('resize', hResize);
+
+    // Collapse Navbar when item clicked
+    this.$refs['e-navbar__center'].children.forEach((e) => (e.onclick = () => (this.collapsed = true)));
   },
   methods: {
     getNavbarWidth() {
@@ -52,18 +56,17 @@ export default {
   @apply transition-all duration-200
   @apply bg-transparent py-8
 
-
-
-
   .e-navbar__start,
   .e-navbar__center,
   .e-navbar__end
     @apply flex flex-nowrap
     flex-basis: 100%
 
-
   .e-navbar__start
     @apply justify-start
+
+  .e-navbar__mobile-overlay
+    @apply hidden
 
   .e-navbar__center
     @apply justify-center mx-8
@@ -102,9 +105,12 @@ export default {
       @apply top-3
 
   &.collapse
+    .e-navbar__mobile-overlay
+      @apply block absolute top-0 right-0 w-screen h-screen
+      @apply bg-gray-900 bg-opacity-10
     .e-navbar__center
       @apply bg-gray-50 px-12 py-8 ring-gray-100 ring-2 rounded-lg shadow-lg
-      @apply absolute flex-col top-8 transform right-4 m-0
+      @apply absolute flex-col top-8 right-4 m-0
       @apply transition-all duration-200
       width: calc( 100vw - 2rem )
       & > *
@@ -120,6 +126,8 @@ export default {
         &:focus
           //
   &.collapsed
+    .e-navbar__mobile-overlay
+      @apply hidden
     .e-navbar__center
       @apply -right-full
 </style>
