@@ -3,6 +3,9 @@ export default {
   srcDir: 'src',
   components: true,
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss'],
+  router: {
+    linkExactActiveClass: 'active',
+  },
   build: {
     publicPath: process.env.NODE_ENV === 'production' ? '/' : '/app/',
     extractCSS: process.env.NODE_ENV === 'production',
